@@ -1,15 +1,15 @@
 package com.example.m5_lesson5.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.m5_lesson5.databinding.FragmentBoardPageBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
-
-
+@AndroidEntryPoint
 @Suppress("UNREACHABLE_CODE")
 class BoardPageFragment  : Fragment() {
 

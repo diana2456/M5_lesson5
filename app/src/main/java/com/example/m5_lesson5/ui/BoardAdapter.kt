@@ -6,13 +6,12 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.m5_lesson5.R
 import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-
-class BoardAdapter (@ApplicationContext fragment: FragmentActivity):FragmentStateAdapter(fragment) {
+class BoardAdapter @Inject constructor(@ApplicationContext fragment: FragmentActivity):FragmentStateAdapter(fragment) {
 
     private val listBoarding = arrayOf(
-        Model(
-            R.drawable.bro,
+        Model(R.drawable.bro,
             "What is AGT Rota?",
             "AGT Rota is an application developed for you to see your queue number.",
             false,
@@ -42,6 +41,7 @@ class BoardAdapter (@ApplicationContext fragment: FragmentActivity):FragmentStat
     )
 
     override fun getItemCount(): Int = listBoarding.size
+
 
     override fun createFragment(position: Int): Fragment {
         val data = bundleOf("object" to listBoarding[position])

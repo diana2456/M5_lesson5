@@ -1,5 +1,4 @@
 
-
 package com.example.m5_lesson5.ui
 
 import android.annotation.SuppressLint
@@ -12,14 +11,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.m5_lesson5.R
 import com.example.m5_lesson5.databinding.FragmentOnBoardBinding
-import com.example.m5_lesson5.utils.Mobile
 import com.example.m5_lesson5.utils.Preferences
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
-
+@AndroidEntryPoint
 class OnBoardFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardBinding
+
+   @Inject lateinit var preferences: Preferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +55,8 @@ class OnBoardFragment : Fragment() {
             val fragmentManager =
                 fragmentManager
             fragmentManager!!.beginTransaction().replace(R.id.container, newFragment).commit()
-            Mobile.providePrefs(requireContext()).setBoardingShowed(true)
+            preferences.setBoardingShowed(true)
+         //   Mobile.providePrefs(requireContext()).setBoardingShowed(true)
         }
     }
 }

@@ -8,9 +8,11 @@
 
 
    <TextView
+       android:id="@+id/tv"
        android:layout_width="match_parent"
-       android:text="Welcome"
        android:textSize="64sp"
+       android:text="Welcome"
+       android:textColor="@color/black"
        android:gravity="center"
        android:layout_height="match_parent"/>
 </FrameLayout>
